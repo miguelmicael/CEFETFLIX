@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/cssdosite.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/filmes.js"></script>
+	<script>
+		$(function(){
+			$.each(filmes, function(indice, movie){
+				var $divOpinioes=$("<div />")
+					.addClass("opinioes");
+				
+				var $ul=$("<ul />")
+					.addClass("tit-semelhante");
+				
+				
+				
+				$.each(movie.opinioes, function(i, opiniao){
+					$divOpinioes
+						.append(
+							$("<p />")
+							.text("Rating: "+ opiniao.rating)
+							.append(
+								$("<p />")
+								.text(opiniao.descricao)
+							)
+						);	
+							
+				});
+				
+				$.each(movie.titulosSemelhantes, function(i, obj){
+					$ul
+						.append(
+							$("<li />")
+							.text(filmes[obj-1].titulo)
+							
+						);
+				});
+				
+				$(".catalogo")
+					.append($("<div />")
+						.addClass("filme")
+						.append(
+							$("<img />")
+							.addClass("img_filme")
+							.attr("src", movie.figura)
+						)
+						.append(
+							$("<h2 />")
+							.text(movie.titulo)
+						)
+						.append(
+							$("<p />")
+							.attr("id","genero")
+							.text("Genero: "+movie.generos)
+						)
+						.append(
+							$("<p />")
+							.attr("id","classificacao")
+							.text("Classificação: "+ movie.classificacao)
+						)
+						.append(
+							$("<p />")
+							.attr("id","resumo")
+							.text("Resumo: "+ movie.resumo)
+						)
+						.append(
+							$("<p />")
+							.attr("id","elenco")
+							.text("Elenco :"+ movie.elenco)
+						)
+						.append(
+						
+							$divOpinioes
+							
+						)
+						.append(
+						
+						$ul
+						)
+						
+						
+						
+					);
+			
+			
+			
+			
+			
+			
+			
+			});
+		
+		
+		});
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<h1 class="titulo">CEFETFLIX</h1>
+	<div class="catalogo">
+		<div class="filme">
+			
+		</div>
+	</div>
+	
+</body>
+</html>

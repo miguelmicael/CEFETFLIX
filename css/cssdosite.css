@@ -1,0 +1,21 @@
+body{
+	background-image: url("../img/fundo.jpeg");
+	background-size: 100%;
+	background-attachment: fixed;
+	color:red;
+	margin-left: 13%;
+	text-align: center;
+}
+.img_filme{
+		width: 500px;
+		height: 250px;
+}
+.filme{
+	height:auto;
+	width:1000px;
+	float:left;
+	background-color:rgba(90,90,90,0.5);
+}
+ul{
+	list-style:none;
+}
